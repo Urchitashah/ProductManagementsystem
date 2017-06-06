@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head>
+    <title>Product Management</title>
+    
+    <!-- Style Sheets -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="scripts/app.css"/>
+    <link rel="stylesheet" href="scripts/bootstrap.css"/>
+    <link rel="stylesheet" href="scripts/toastr.css"/>
+    
+    <!-- jQuery Library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    <!-- Library Scripts -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-resource.min.js"></script>
+    <script src="scripts/angular-mocks.js"></script>
+    <script src="scripts/ui-utils.js"></script>
+    <script src="scripts/ui-bootstrap-tpls-0.12.1.js"></script>
+    <script src="scripts/toastr.js"></script>
+    <script src="scripts/d3.js"></script>
+    <script src="scripts/angular-charts.min.js"></script>
+    
+    <!-- ui Router -->
+    <script src="scripts/angular-ui-router.js"></script>
+    
+     <!-- Application Script -->
+    <script src="app/app.js"></script>
+    
+    <!-- Services -->
+    <script src="scripts/common.service.js"></script>
+    <script src="scripts/productResource.js"></script>
+    <script src="scripts/productResourceMock.js"></script>
+    <script src="scripts/productService.js"></script>
+    
+    <!-- Controller -->
+    <script src="app/personaldetails/myctrl.js"></script>
+    <script src="app/personaldetails/prodDetailsCtrl.js"></script>
+    <script src="app/personaldetails/prodEditCtrl.js"></script>
+    <script src="app/salarydetails/dataAnalyticsCtrl.js"></script>
+    
+</head>
+<body>
+    
+<nav class="navbar navbar-inverse">
+<div class="container">
+    <a class="navbar-brand" ui-sref="home">Apple's Product Management</a>
+    <div class="navbar-header">
+        <button type="button"
+                class="navbar-toggle"
+                data-toggle="collapse"
+                data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+    </div>
+    <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+        <li><a ui-sref="prodList">Product List</a></li>
+        <li><a ui-sref="prodEdit.personal({prodId:0})"><i class="glyphicon glyphicon-plus"></i> Add Product </a></li>
+        <li><a ui-sref="dataAnalytics">Data Analytics</a></li>
+        </ul>
+    </div>
+</div>
+</nav>
+<div class="container">
+    <div ui-view></div>
+</div>
+</body> 
+</html>

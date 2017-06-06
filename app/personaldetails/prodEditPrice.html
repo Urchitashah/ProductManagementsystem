@@ -1,0 +1,36 @@
+<form class="form-horizontal" name="prodForm" novalidate>
+    <legend>
+        Product Price Details
+    </legend>
+
+    <div class="form-group"
+         ng-class="{'has-error':prodForm.inputsaletax.$invalid &&
+                                    prodForm.inputsaletax.$dirty}"   >
+        <label for="inputsaletax" class="col-md-2 control-label">Sale Tax %</label>
+        <div class="col-md-2">
+            <input id="inputsaletax" name="inputsaletax"
+                   type="text"
+                   ng-model="vm.product.saletax" class="form-control"
+                   ui-mask="99.99 (required)" required/>
+        </div>
+            <span class="help-block has-error"
+                  ng-show="prodForm.inputsaletax.$invalid">
+                  Sale Tax required
+            </span>
+    </div>
+    <div class="form-group"
+         ng-class="{'has-error':prodForm.inputothertax.$invalid &&
+                                    prodForm.inputothertax.$dirty}"   >
+        <label for="inputothertax" class="col-md-2 control-label">Other Tax %</label>
+        <div class="col-md-2">
+            <input id="inputothertax" name="inputothertax"
+                   type="text"
+                   ng-model="vm.product.othertax" class="form-control"
+                   ui-mask="99.99 (required)" required/>
+        </div>
+            <span class="help-block has-error"
+                  ng-show="prodForm.inputothertax.$invalid">
+                  Other Tax required
+            </span>
+    </div>
+</form>

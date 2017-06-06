@@ -1,0 +1,36 @@
+<div class="panel panel-primary">
+    <div class="panel-heading" style="font-size:large">
+        Employee List
+    </div >
+    <div class="panel-body">
+        <table class="table">
+            <thead>
+            <tr>
+                <td>Code</td>
+                <td>Name</td>
+                <td>Manufacturing Date</td>
+                <td>Price</td>
+                <td>
+                    <button class="btn btn-primary" type="button" ng-click="vm.toggleimage()">
+
+                        {{vm.showImage?"Hide":"Show"}} Image
+                    </button>
+                </td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="emp in vm.products">
+                <td><a ui-sref="prodDetail({prodId: emp.prodId})"> {{emp.code}}</a> </td>
+                <td>{{emp.name}}</td>
+                <td>{{emp.mfgdate}}</td>
+                <td>{{emp.price | currency}}</td>
+                <td><img ng-src="{{emp.image}}" ng-if="vm.showImage" style="width:50px; height:50px" title="{{emp.name}}"></td>
+                <td><a class="btn btn-primary"
+                       ui-sref="prodEdit.personal({prodId: emp.prodId})"> Edit
+                    </a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
